@@ -1,0 +1,19 @@
+Levitation mécanique.
+
+Lévitation mécanique est un dispositif permettant à son utilisateur de s'élever lorsqu'il atteint l'état méditatif.
+
+Après avoir mis un capteur eeg (electroencephalograme) sur sa tête il s'asseoit sur une plateforme qui lorsque ses ondes cérebrales indiquent un état de méditation s'éleve grace à un moteur placé en dessous.
+
+Afin de réaliser cela les données du capteur eeg sont transmises via bluetooth et le protocole tcp/ip à un ordinateur sur lequel Touchdesigner (logiciel) est installé.
+Touchdesigner récupère les données et en extrait les données des ondes cérebrales relatives à l'état méditatif.
+En cas de mauvais positionnement du casque sur la tête de l'utilisateur une led en face de lui s'allume.
+
+Un vidéoprojecteur connecté à l'ordinateur projette les ondes cérébrales de l'utilisateur derrière lui. 
+
+Trois status sont possibles. 
+
+1 - L'utilisateur n'est pas du tout dans un état méditatif, le siege descend.
+2 - L'utilisateur est dans un entre deux, le siege ne bouge pas.
+3 - L'utilisateur est dans un état méditatif, le siege monte.
+
+Afin d'activer dans un sens ou l'autre le moteur, un raspberry connecté à une carte relai reçoit par le protocole osc (au travers d'un serveur node.js) les données extraites et traités par Touchdesigner.
